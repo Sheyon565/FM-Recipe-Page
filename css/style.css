@@ -1,0 +1,226 @@
+@font-face {
+    font-family: 'outfit';
+    src: url("../assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format('truetype');
+    font-weight: 400 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'young-Serif';
+    src: url("../assets/fonts/young-serif/YoungSerif-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+
+    /* Spacing */
+    --card-padding: 1.9rem;
+    --space-unit: 1rem;
+    --gap-sm: calc(0.5 * var(--space-unit));
+    --gap-md: var(--space-unit);
+    --gap-lg: calc(1.5 * var(--space-unit));
+    --gap-xl: calc(2 * var(--space-unit));
+    --gap-2xl: calc(2.5 * var(--space-unit));
+
+    /* Typography */
+    --font-size: 1rem;
+    --font-headingSize: calc(2 * var(--font-size));
+    --font-body: 'outfit', sans-serif;
+    --font-heading: 'young-serif', serif;
+    --line-height: 1.5;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--stone-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: var(--font-size);
+    color: var(--stone-600);
+    line-height: var(--line-height);
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+}
+
+h1 {
+    color: var(--brown-800);
+    font-size: var(--font-headingSize);
+    line-height: 1;
+    padding-bottom: var(--gap-lg);
+}
+
+h2 {
+    color: var(--rose-800);
+}
+
+ol {
+    padding: var(--gap-sm) var(--gap-md);
+}
+
+strong {
+    display: contents
+}
+
+ol li::marker {
+    color: var(--rose-800);
+    font-weight: 700;
+}
+
+li {
+    padding: var(--gap-sm) var(--gap-md);
+}
+
+hr {
+    border: 0.5px solid var(--stone-100);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.card {
+    padding: var(--card-padding);
+    padding-top: 0;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 0;
+}
+
+.card__figure-image {
+    width: calc(100% + 2*var(--card-padding));
+    height: auto;
+    margin: 0 calc(-1 * var(--card-padding));
+}
+
+.card__list {
+    list-style: none;
+}
+
+.card__list-items {
+    display: flex;
+    align-items: center;
+    padding: var(--gap-sm);
+}
+
+.card__list-items::before {
+    content: "•";
+    color: var(--rose-800);
+    font-weight: 700;
+    padding-right: var(--gap-md);
+}
+
+.sr-only {
+    position: absolute;
+    left: -1000000px;
+}
+
+.card__description {
+    margin: var(--gap-xl) 0;
+}
+
+.description__title {
+    color: var(--stone-900);
+    padding-bottom: var(--gap-md);
+}
+
+.card__preparation {
+    background-color: var(--rose-50);
+    padding: var(--gap-md) var(--gap-lg) var(--gap-sm);
+    margin: var(--gap-2xl) 0 var(--gap-xl);
+}
+
+.card__ingredients {
+    margin: var(--gap-2xl) 0 var(--gap-xl);
+}
+
+.card__instructions {
+    margin: var(--gap-2xl) 0 var(--gap-xl);
+}
+
+.card__nutrition {
+    margin: var(--gap-2xl) 0 var(--gap-sm);
+}
+
+.nutrition__description {
+    padding-right: var(--gap-sm);
+}
+
+.nutrition__table {
+    margin: var(--gap-md) 0;
+    min-width: 100%;
+    text-align: left;
+}
+
+.nutrition__tr {
+    border: 1px solid var(--stone-100);
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
+
+.nutrition__tr:last-child {
+    border-bottom: 0;
+}
+
+.nutrition__th {
+    font-weight: 400;
+    padding-left: var(--gap-lg);
+}
+
+.nutrition__td {
+    font-weight: 700;
+    color: var(--rose-800);
+    padding-right: var(--gap-lg);
+}
+
+.nutrition__th,
+.nutrition__td {
+    padding-top: var(--gap-sm);
+    padding-bottom: var(--gap-sm);
+}
+
+@media (min-width: 48em) {
+    body {
+        padding: var(--gap-xl);
+    }
+
+    .card {
+        width: 90%;
+        border-radius: 0.8rem;
+        padding: var(--card-padding);
+    }
+
+    .card__figure-image {
+        margin: 0;
+        width: 100%;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width:62em) {
+    .card {
+        width: 720px;
+    }
+}
